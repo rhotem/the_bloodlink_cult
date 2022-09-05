@@ -1,0 +1,8 @@
+name: RevelDemonPlugin
+version: '${project.version}'
+main: me.justacat.reveldemonplugin.RevelDemonPlugin
+api-version: 1.19
+commands:
+  GetItem:
+    permission: op
+    usage: "/GetItem <ID>"

@@ -8,6 +8,7 @@ import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemFlag;
@@ -94,6 +95,8 @@ public abstract class CustomItem extends ItemStack {
     public boolean hideEnchants() {return false;}
 
     public boolean unbreakable() {return true;}
+
+    public void onAttack(EntityDamageByEntityEvent e) {}
 
     public List<String> getLore() {
 

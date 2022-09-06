@@ -1,8 +1,7 @@
 package me.justacat.thebloodlinkcult.items;
 
 import me.justacat.thebloodlinkcult.items.armors.*;
-import me.justacat.thebloodlinkcult.items.others.Revive;
-import me.justacat.thebloodlinkcult.items.others.TheBloodLinkScribes;
+import me.justacat.thebloodlinkcult.items.others.*;
 
 public enum RegisteredItems {
 
@@ -12,7 +11,11 @@ public enum RegisteredItems {
     BloodLinkLeggings(new BloodLinkLeggings()),
     BloodLinkBoots(new BloodLinkBoots()),
     TheRedShield(new TheRedShield()),
-    TheBloodLinkScribes(new TheBloodLinkScribes());
+    TheBloodLinkScribes(new TheBloodLinkScribes()),
+    TheBladeBreaker(new TheBladeBreaker()),
+    MagicWand(new MagicWand()),
+    TheGodKiller(new TheGodKiller()),
+    TheSacrifice(new TheSacrifice());
 
     private final CustomItem item;
 

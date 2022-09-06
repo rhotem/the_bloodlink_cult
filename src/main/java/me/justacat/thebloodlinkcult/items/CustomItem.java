@@ -124,7 +124,7 @@ public abstract class CustomItem extends ItemStack {
 
     }
 
-    public boolean hideFlags() {return true;}
+    public boolean hideFlags() {return false;}
 
     public String getID() {return getItemMeta().getPersistentDataContainer().get(customItemKey, PersistentDataType.STRING);}
 

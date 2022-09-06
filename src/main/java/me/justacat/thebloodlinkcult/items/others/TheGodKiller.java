@@ -39,7 +39,9 @@ public class TheGodKiller extends CustomItem {
 
         if (charged.contains(player.getUniqueId())) {
 
+            charged.remove(player.getUniqueId());
             player.getWorld().createExplosion(e.getEntity().getLocation(), 7, true, true, player);
+
 
         }
 
@@ -69,7 +71,7 @@ public class TheGodKiller extends CustomItem {
 
     @Override
     public String getName() {
-        return null;
+        return "&4The God Killer";
     }
 
     @Override

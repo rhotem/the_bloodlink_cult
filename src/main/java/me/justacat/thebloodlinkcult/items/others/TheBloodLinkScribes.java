@@ -13,12 +13,14 @@ import java.util.List;
 
 public class TheBloodLinkScribes extends CustomItem {
     public TheBloodLinkScribes() {
-        super(Material.BOOK, "TheBloodLinkScribes");
+        super(Material.WRITTEN_BOOK, "TheBloodLinkScribes");
 
         BookMeta meta = (BookMeta) getItemMeta();
 
 
         meta.setAuthor(Chat.colorMessage("&4???"));
+
+        meta.setTitle(Chat.colorMessage("&4???"));
 
         String[] array = new  String[20];
 

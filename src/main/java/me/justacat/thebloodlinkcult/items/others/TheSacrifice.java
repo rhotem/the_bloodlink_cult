@@ -1,21 +1,22 @@
 package me.justacat.thebloodlinkcult.items.others;
 
+import me.justacat.thebloodlinkcult.TheBloodLinkCult;
 import me.justacat.thebloodlinkcult.items.CustomItem;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
+import org.bukkit.Particle;
+import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.EquipmentSlot;
+import org.bukkit.util.Vector;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.UUID;
 
 public class TheSacrifice extends CustomItem {
 
-    public static HashMap<UUID, Integer> hits = new HashMap<>();
 
 
     public TheSacrifice() {
@@ -50,25 +51,38 @@ public class TheSacrifice extends CustomItem {
     @Override
     public void onAttack(EntityDamageByEntityEvent e) {
 
-        int thisHits = hits.getOrDefault(e.getDamager().getUniqueId(), 0);
+        damageAttack(1, e);
 
-        if (thisHits < 3) {
-
-            hits.put(e.getDamager().getUniqueId(), thisHits + 1);
-            Bukkit.getPluginManager().callEvent(e);
-
-
-        } else {
-            hits.put(e.getDamager().getUniqueId(), 0);
-
-        }
 
 
     }
 
+    public void damageAttack(int number, EntityDamageByEntityEvent e) {
+
+        if (number > 3) return;
+
+        if (e.getEntity() instanceof LivingEntity entity) {
+
+            Bukkit.getScheduler().runTaskLater(TheBloodLinkCult.instance, () -> {
+                entity.damage(e.getFinalDamage(), e.getDamager());
+
+                Vector direction = entity.getLocation().toVector().add(e.getDamager().getLocation().toVector().multiply(-1));
+
+                entity.setVelocity(entity.getVelocity().add(direction.normalize().multiply(0.3)));
+
+                entity.getWorld().spawnParticle(Particle.SWEEP_ATTACK, entity.getLocation(), 1);
+
+                damageAttack(number + 1, e);
+
+            }, 5);
+
+
+        }
+    }
+
     @Override
     public String getName() {
-        return "&4TheSacrifice";
+        return "&4The Sacrifice";
     }
 
     @Override

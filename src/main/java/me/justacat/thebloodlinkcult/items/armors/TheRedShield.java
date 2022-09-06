@@ -78,4 +78,9 @@ public class TheRedShield extends CustomItem {
     public EquipmentSlot[] getActiveSlots() {
         return new EquipmentSlot[0];
     }
+
+    @Override
+    public boolean unbreakable() {
+        return false;
+    }
 }

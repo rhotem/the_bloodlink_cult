@@ -50,7 +50,7 @@ public class Revive extends CustomItem {
 
     @Override
     public String getName() {
-        return null;
+        return "&dRevive";
     }
 
     @Override

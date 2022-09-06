@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>me.justacat</groupId>
-    <artifactId>RevelDemonPlugin</artifactId>
+    <artifactId>TheBloodLinkCult</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
 
-    <name>RevelDemonPlugin</name>
+    <name>TheBloodLinkCult</name>
 
     <properties>
         <java.version>1.8</java.version>

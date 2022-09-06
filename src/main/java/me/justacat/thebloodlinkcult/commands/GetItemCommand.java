@@ -1,6 +1,6 @@
-package me.justacat.reveldemonplugin.commands;
+package me.justacat.thebloodlinkcult.commands;
 
-import me.justacat.reveldemonplugin.items.CustomItem;
+import me.justacat.thebloodlinkcult.items.CustomItem;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;

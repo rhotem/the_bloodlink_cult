@@ -1,6 +1,6 @@
-package me.justacat.reveldemonplugin.items;
+package me.justacat.thebloodlinkcult.items;
 
-import me.justacat.reveldemonplugin.misc.Chat;
+import me.justacat.thebloodlinkcult.misc.Chat;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.attribute.Attribute;

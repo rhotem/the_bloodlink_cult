@@ -1,7 +1,7 @@
-package me.justacat.reveldemonplugin.listeners;
+package me.justacat.thebloodlinkcult.listeners;
 
-import me.justacat.reveldemonplugin.items.CustomItem;
-import me.justacat.reveldemonplugin.items.armors.TheRedShield;
+import me.justacat.thebloodlinkcult.items.CustomItem;
+import me.justacat.thebloodlinkcult.items.armors.TheRedShield;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;

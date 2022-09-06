@@ -1,7 +1,7 @@
-package me.justacat.reveldemonplugin.listeners;
+package me.justacat.thebloodlinkcult.listeners;
 
-import me.justacat.reveldemonplugin.RevelDemonPlugin;
-import me.justacat.reveldemonplugin.items.CustomItem;
+import me.justacat.thebloodlinkcult.TheBloodLinkCult;
+import me.justacat.thebloodlinkcult.items.CustomItem;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -74,7 +74,7 @@ public class JoinQuitEvent implements Listener {
 
             }
 
-        }.runTaskTimer(RevelDemonPlugin.instance, 10, 10);
+        }.runTaskTimer(TheBloodLinkCult.instance, 10, 10);
 
     }
 

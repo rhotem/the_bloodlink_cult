@@ -1,12 +1,12 @@
-package me.justacat.reveldemonplugin;
+package me.justacat.thebloodlinkcult;
 
-import me.justacat.reveldemonplugin.commands.GetItemCommand;
-import me.justacat.reveldemonplugin.commands.GetItemTabComplete;
+import me.justacat.thebloodlinkcult.commands.GetItemCommand;
+import me.justacat.thebloodlinkcult.commands.GetItemTabComplete;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class RevelDemonPlugin extends JavaPlugin {
+public final class TheBloodLinkCult extends JavaPlugin {
 
-    public static RevelDemonPlugin instance;
+    public static TheBloodLinkCult instance;
 
     @Override
     public void onEnable() {

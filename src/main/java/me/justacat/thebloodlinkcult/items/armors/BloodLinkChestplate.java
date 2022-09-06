@@ -1,41 +1,33 @@
-package me.justacat.reveldemonplugin.items.armors;
+package me.justacat.thebloodlinkcult.items.armors;
 
-import me.justacat.reveldemonplugin.items.CustomItem;
-import org.bukkit.DyeColor;
+import me.justacat.thebloodlinkcult.items.CustomItem;
 import org.bukkit.Material;
-import org.bukkit.block.Banner;
+import org.bukkit.attribute.Attribute;
+import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.EquipmentSlot;
-import org.bukkit.inventory.meta.BlockStateMeta;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class TheRedShield extends CustomItem {
+public class BloodLinkChestplate extends CustomItem {
 
-    public TheRedShield() {
-        super(Material.SHIELD, "TheRedShield");
+    public BloodLinkChestplate() {
+        super(Material.NETHERITE_CHESTPLATE, "BloodLinkChestplate");
 
         ItemMeta meta = getItemMeta();
 
-        meta.addEnchant(Enchantment.THORNS, 10, true);
-        meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 10, true);
+        meta.getAttributeModifiers(EquipmentSlot.CHEST).put(Attribute.GENERIC_ARMOR, new AttributeModifier("BloodLinkChestplate", 40, AttributeModifier.Operation.ADD_NUMBER));
+        meta.addEnchant(Enchantment.THORNS, 6, true);
+        meta.addEnchant(Enchantment.BINDING_CURSE, 1, false);
+
 
 
         setItemMeta(meta);
-
-        BlockStateMeta blockStateMeta = (BlockStateMeta) getItemMeta();
-
-        Banner banner = (Banner) blockStateMeta.getBlockState();
-
-        banner.setBaseColor(DyeColor.RED);
-        banner.update();
-
-        blockStateMeta.setBlockState(banner);
-        setItemMeta(blockStateMeta);
 
     }
 
@@ -51,7 +43,6 @@ public class TheRedShield extends CustomItem {
 
     @Override
     public void whileOnUse(Player player) {
-
     }
 
     @Override
@@ -66,12 +57,12 @@ public class TheRedShield extends CustomItem {
 
     @Override
     public String getName() {
-        return "&4The Red Shield";
+        return "&4The Bloodlink Chestplate";
     }
 
     @Override
     public List<String> getCustomLore() {
-        return List.of("Loses durability very slowly!");
+        return new ArrayList<>();
     }
 
     @Override

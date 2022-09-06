@@ -1,4 +1,4 @@
-package me.justacat.reveldemonplugin.misc;
+package me.justacat.thebloodlinkcult.misc;
 
 import org.bukkit.ChatColor;
 

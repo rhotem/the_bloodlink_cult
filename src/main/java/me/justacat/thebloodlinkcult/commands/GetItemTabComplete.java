@@ -1,6 +1,6 @@
-package me.justacat.reveldemonplugin.commands;
+package me.justacat.thebloodlinkcult.commands;
 
-import me.justacat.reveldemonplugin.items.RegisteredItems;
+import me.justacat.thebloodlinkcult.items.RegisteredItems;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;

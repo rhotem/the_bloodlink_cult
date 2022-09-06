@@ -1,6 +1,6 @@
-package me.justacat.reveldemonplugin.items;
+package me.justacat.thebloodlinkcult.items;
 
-import me.justacat.reveldemonplugin.items.armors.*;
+import me.justacat.thebloodlinkcult.items.armors.*;
 
 public enum RegisteredItems {
 

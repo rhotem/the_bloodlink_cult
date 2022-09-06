@@ -1,6 +1,6 @@
-package me.justacat.reveldemonplugin.items.armors;
+package me.justacat.thebloodlinkcult.items.armors;
 
-import me.justacat.reveldemonplugin.items.CustomItem;
+import me.justacat.thebloodlinkcult.items.CustomItem;
 import org.bukkit.Material;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
@@ -10,22 +10,21 @@ import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class BloodLinkChestplate extends CustomItem {
+public class BloodLinkHelmet extends CustomItem {
 
-    public BloodLinkChestplate() {
-        super(Material.NETHERITE_CHESTPLATE, "BloodLinkChestplate");
+
+    public BloodLinkHelmet() {
+        super(Material.PLAYER_HEAD, "BloodLinkHelmet");
 
         ItemMeta meta = getItemMeta();
 
-        meta.getAttributeModifiers(EquipmentSlot.CHEST).put(Attribute.GENERIC_ARMOR, new AttributeModifier("BloodLinkChestplate", 40, AttributeModifier.Operation.ADD_NUMBER));
-        meta.addEnchant(Enchantment.THORNS, 6, true);
+        meta.getAttributeModifiers(EquipmentSlot.HEAD).put(Attribute.GENERIC_ARMOR, new AttributeModifier("BloodLinkHelmet", 15, AttributeModifier.Operation.ADD_NUMBER));
         meta.addEnchant(Enchantment.BINDING_CURSE, 1, false);
-
-
 
         setItemMeta(meta);
 
@@ -43,6 +42,7 @@ public class BloodLinkChestplate extends CustomItem {
 
     @Override
     public void whileOnUse(Player player) {
+        player.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 100, 10, false, false, false));
     }
 
     @Override
@@ -57,12 +57,12 @@ public class BloodLinkChestplate extends CustomItem {
 
     @Override
     public String getName() {
-        return "&4The Bloodlink Chestplate";
+        return "&4The Bloodlink Knight Helm";
     }
 
     @Override
     public List<String> getCustomLore() {
-        return new ArrayList<>();
+        return List.of("&7Gives the wearer night vision!");
     }
 
     @Override

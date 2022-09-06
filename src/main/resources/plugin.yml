@@ -1,6 +1,6 @@
-name: RevelDemonPlugin
+name: TheBloodLinkCult
 version: '${project.version}'
-main: me.justacat.reveldemonplugin.RevelDemonPlugin
+main: me.justacat.thebloodlinkcult.TheBloodLinkCult
 api-version: 1.19
 commands:
   GetItem:

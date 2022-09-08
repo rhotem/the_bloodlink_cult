@@ -20,6 +20,7 @@ public final class TheBloodLinkCult extends JavaPlugin {
 
         CustomItem.customItemKey = new NamespacedKey(this, "CustomItem");
         CustomItem.uuidKey = new NamespacedKey(this, "DrillUUID");
+        Church.churchKey = new NamespacedKey(this, "Church");
 
         getCommand("GetItem").setExecutor(new GetItemCommand());
         getCommand("GetItem").setTabCompleter(new GetItemTabComplete());

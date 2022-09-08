@@ -15,6 +15,7 @@ public enum RegisteredItems {
     TheBladeBreaker(new TheBladeBreaker()),
     MagicWand(new MagicWand()),
     TheGodKiller(new TheGodKiller()),
+    Teleporter(new Teleporter()),
     TheSacrifice(new TheSacrifice());
 
     private final CustomItem item;

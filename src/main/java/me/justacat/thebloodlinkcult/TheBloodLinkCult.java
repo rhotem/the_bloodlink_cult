@@ -5,6 +5,7 @@ import me.justacat.thebloodlinkcult.commands.GetItemTabComplete;
 import me.justacat.thebloodlinkcult.commands.SpawnCrimsonGhoul;
 import me.justacat.thebloodlinkcult.items.CustomItem;
 import me.justacat.thebloodlinkcult.listeners.ClickEvent;
+import me.justacat.thebloodlinkcult.listeners.GhoulEvents;
 import me.justacat.thebloodlinkcult.listeners.JoinQuitEvent;
 import org.bukkit.Bukkit;
 import org.bukkit.NamespacedKey;
@@ -14,10 +15,14 @@ public final class TheBloodLinkCult extends JavaPlugin {
 
     public static TheBloodLinkCult instance;
 
+    public static NamespacedKey drainKey;
+
     @Override
     public void onEnable() {
 
         instance = this;
+
+        drainKey = new NamespacedKey(this, "Drain");
 
         CustomItem.customItemKey = new NamespacedKey(this, "CustomItem");
         CustomItem.uuidKey = new NamespacedKey(this, "DrillUUID");
@@ -28,6 +33,7 @@ public final class TheBloodLinkCult extends JavaPlugin {
 
         Bukkit.getPluginManager().registerEvents(new ClickEvent(), this);
         Bukkit.getPluginManager().registerEvents(new JoinQuitEvent(), this);
+        Bukkit.getPluginManager().registerEvents(new GhoulEvents(), this);
 
     }
 
@@ -35,4 +41,5 @@ public final class TheBloodLinkCult extends JavaPlugin {
     public void onDisable() {
         // Plugin shutdown logic
     }
+
 }

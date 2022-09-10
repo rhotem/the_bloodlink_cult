@@ -13,11 +13,13 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.util.Vector;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class TheSacrifice extends CustomItem {
 
-
+    List<UUID> activeOn = new ArrayList<>();
 
     public TheSacrifice() {
         super(Material.IRON_SWORD, "TheSacrifice");
@@ -51,6 +53,8 @@ public class TheSacrifice extends CustomItem {
     @Override
     public void onAttack(EntityDamageByEntityEvent e) {
 
+        if (activeOn.contains(e.getEntity().getUniqueId())) return;
+        activeOn.add(e.getEntity().getUniqueId());
         damageAttack(1, e);
 
 
@@ -59,7 +63,10 @@ public class TheSacrifice extends CustomItem {
 
     public void damageAttack(int number, EntityDamageByEntityEvent e) {
 
-        if (number > 3) return;
+        if (number > 3) {
+            activeOn.remove(e.getEntity().getUniqueId());
+            return;
+        }
 
         if (e.getEntity() instanceof LivingEntity entity) {
 

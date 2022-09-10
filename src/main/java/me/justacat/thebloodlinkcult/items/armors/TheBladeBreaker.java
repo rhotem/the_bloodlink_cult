@@ -15,8 +15,8 @@ import org.bukkit.inventory.meta.ItemMeta;
 import java.util.List;
 
 public class TheBladeBreaker extends CustomItem {
-    public TheBladeBreaker() {
-        super(Material.SHIELD, "TheBladeBreaker");
+    public TheBladeBreaker(boolean bloodTrooper) {
+        super(Material.SHIELD, bloodTrooper ? "TheBladeBreaker" : "TheBloodyPainting");
 
         ItemMeta meta = getItemMeta();
 
@@ -70,7 +70,13 @@ public class TheBladeBreaker extends CustomItem {
 
     @Override
     public String getName() {
-        return "&4The Blade Breaker";
+
+        if (getID().equals("TheBloodyPainting")) {
+            return "&4The Bloody Painting";
+        } else {
+            return "&4The Blade Breaker";
+
+        }
     }
 
     @Override
@@ -85,6 +91,6 @@ public class TheBladeBreaker extends CustomItem {
 
     @Override
     public boolean unbreakable() {
-        return false;
+        return getID().equals("TheBloodyPainting");
     }
 }

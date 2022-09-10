@@ -1,29 +1,27 @@
-package me.justacat.thebloodlinkcult.items.armors;
+package me.justacat.thebloodlinkcult.items.armors.priest;
 
 import me.justacat.thebloodlinkcult.items.CustomItem;
+import org.bukkit.Color;
 import org.bukkit.Material;
-import org.bukkit.attribute.Attribute;
-import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.EquipmentSlot;
-import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.inventory.meta.LeatherArmorMeta;
 
+import java.util.HashMap;
 import java.util.List;
 
-public class BloodLinkBoots extends CustomItem {
+public class PriestLeggings extends CustomItem {
 
 
-    public BloodLinkBoots() {
-        super(Material.NETHERITE_BOOTS, "BloodLinkBoots");
+    public PriestLeggings() {
+        super(Material.LEATHER_LEGGINGS, "PriestLeggings");
 
-        ItemMeta meta = getItemMeta();
+        LeatherArmorMeta meta = (LeatherArmorMeta) getItemMeta();
 
-        meta.getAttributeModifiers(EquipmentSlot.FEET).put(Attribute.GENERIC_ARMOR, new AttributeModifier("BloodLinkBoots", 15, AttributeModifier.Operation.ADD_NUMBER));
-        meta.addEnchant(Enchantment.BINDING_CURSE, 1, false);
-        meta.addEnchant(Enchantment.PROTECTION_FALL, 10, true);
+        meta.setColor(Color.RED);
 
         setItemMeta(meta);
 
@@ -41,6 +39,7 @@ public class BloodLinkBoots extends CustomItem {
 
     @Override
     public void whileOnUse(Player player) {
+
     }
 
     @Override
@@ -55,16 +54,28 @@ public class BloodLinkBoots extends CustomItem {
 
     @Override
     public String getName() {
-        return "&4The Bloodlink Boots";
+        return "&4Bloodlink Priest Leggings";
     }
 
     @Override
     public List<String> getCustomLore() {
-        return List.of("&7Protects it's wearer from fall damage!");
+        return null;
+    }
+
+    @Override
+    public HashMap<Enchantment, Integer> getEnchants() {
+
+        HashMap<Enchantment, Integer> map = new HashMap<>();
+
+        map.put(Enchantment.BINDING_CURSE, 1);
+
+        return map;
+
     }
 
     @Override
     public EquipmentSlot[] getActiveSlots() {
         return new EquipmentSlot[0];
     }
+
 }

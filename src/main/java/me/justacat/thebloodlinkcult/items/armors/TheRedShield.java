@@ -66,7 +66,7 @@ public class TheRedShield extends CustomItem {
 
     @Override
     public String getName() {
-        return "&4The Red Shield";
+        return "&4the Galliant protector";
     }
 
     @Override

@@ -1,31 +1,27 @@
-package me.justacat.thebloodlinkcult.items.armors;
+package me.justacat.thebloodlinkcult.items.armors.fighter;
 
 import me.justacat.thebloodlinkcult.items.CustomItem;
+import org.bukkit.Color;
 import org.bukkit.Material;
-import org.bukkit.attribute.Attribute;
-import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.EquipmentSlot;
-import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.inventory.meta.LeatherArmorMeta;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
-public class BloodLinkChestplate extends CustomItem {
-
-    public BloodLinkChestplate() {
-        super(Material.NETHERITE_CHESTPLATE, "BloodLinkChestplate");
-
-        ItemMeta meta = getItemMeta();
-
-        meta.getAttributeModifiers(EquipmentSlot.CHEST).put(Attribute.GENERIC_ARMOR, new AttributeModifier("BloodLinkChestplate", 40, AttributeModifier.Operation.ADD_NUMBER));
-        meta.addEnchant(Enchantment.THORNS, 6, true);
-        meta.addEnchant(Enchantment.BINDING_CURSE, 1, false);
+public class FighterLeggings extends CustomItem {
 
 
+    public FighterLeggings() {
+        super(Material.LEATHER_LEGGINGS, "FighterLeggings");
+
+        LeatherArmorMeta meta = (LeatherArmorMeta) getItemMeta();
+
+        meta.setColor(Color.RED);
 
         setItemMeta(meta);
 
@@ -43,6 +39,7 @@ public class BloodLinkChestplate extends CustomItem {
 
     @Override
     public void whileOnUse(Player player) {
+
     }
 
     @Override
@@ -57,16 +54,28 @@ public class BloodLinkChestplate extends CustomItem {
 
     @Override
     public String getName() {
-        return "&4The Bloodlink Chestplate";
+        return "&4Bloodlink Fighter Leggings";
     }
 
     @Override
     public List<String> getCustomLore() {
-        return new ArrayList<>();
+        return null;
+    }
+
+    @Override
+    public HashMap<Enchantment, Integer> getEnchants() {
+
+        HashMap<Enchantment, Integer> map = new HashMap<>();
+
+        map.put(Enchantment.BINDING_CURSE, 1);
+
+        return map;
+
     }
 
     @Override
     public EquipmentSlot[] getActiveSlots() {
         return new EquipmentSlot[0];
     }
+
 }

@@ -6,3 +6,5 @@ commands:
   GetItem:
     permission: op
     usage: "/GetItem <ID>"
+  SpawnCrimsonGhoul:
+    permission: op

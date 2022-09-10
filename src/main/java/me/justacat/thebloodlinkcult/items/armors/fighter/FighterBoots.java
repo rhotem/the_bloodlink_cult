@@ -1,0 +1,84 @@
+package me.justacat.thebloodlinkcult.items.armors.fighter;
+
+import me.justacat.thebloodlinkcult.items.CustomItem;
+import org.bukkit.Color;
+import org.bukkit.Material;
+import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.Player;
+import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.inventory.EquipmentSlot;
+import org.bukkit.inventory.meta.LeatherArmorMeta;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
+
+import java.util.HashMap;
+import java.util.List;
+
+public class FighterBoots extends CustomItem {
+    public FighterBoots() {
+        super(Material.LEATHER_BOOTS, "FighterBoots");
+
+        LeatherArmorMeta meta = (LeatherArmorMeta) getItemMeta();
+
+        meta.setColor(Color.RED);
+
+        setItemMeta(meta);
+
+    }
+
+    @Override
+    public void onRightClick(PlayerInteractEvent e) {
+
+    }
+
+    @Override
+    public void onLeftClick(PlayerInteractEvent e) {
+
+    }
+
+    @Override
+    public void whileOnUse(Player player) {
+
+        player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 100, 9, false, false, false));
+        player.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 100, 2, false, false, false));
+
+
+    }
+
+    @Override
+    public void whileInInventory(Player player) {
+
+    }
+
+    @Override
+    public void onMine(BlockBreakEvent e) {
+
+    }
+
+    @Override
+    public String getName() {
+        return "&4Bloodlink Fighter Boots";
+    }
+
+    @Override
+    public List<String> getCustomLore() {
+        return null;
+    }
+
+    @Override
+    public HashMap<Enchantment, Integer> getEnchants() {
+
+        HashMap<Enchantment, Integer> map = new HashMap<>();
+
+        map.put(Enchantment.BINDING_CURSE, 1);
+
+        return map;
+
+    }
+
+    @Override
+    public EquipmentSlot[] getActiveSlots() {
+        return new EquipmentSlot[0];
+    }
+}

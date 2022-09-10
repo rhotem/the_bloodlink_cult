@@ -2,6 +2,7 @@ package me.justacat.thebloodlinkcult;
 
 import me.justacat.thebloodlinkcult.commands.GetItemCommand;
 import me.justacat.thebloodlinkcult.commands.GetItemTabComplete;
+import me.justacat.thebloodlinkcult.commands.SpawnCrimsonGhoul;
 import me.justacat.thebloodlinkcult.items.CustomItem;
 import me.justacat.thebloodlinkcult.listeners.ClickEvent;
 import me.justacat.thebloodlinkcult.listeners.JoinQuitEvent;
@@ -23,6 +24,7 @@ public final class TheBloodLinkCult extends JavaPlugin {
 
         getCommand("GetItem").setExecutor(new GetItemCommand());
         getCommand("GetItem").setTabCompleter(new GetItemTabComplete());
+        getCommand("SpawnCrimsonGhoul").setExecutor(new SpawnCrimsonGhoul());
 
         Bukkit.getPluginManager().registerEvents(new ClickEvent(), this);
         Bukkit.getPluginManager().registerEvents(new JoinQuitEvent(), this);

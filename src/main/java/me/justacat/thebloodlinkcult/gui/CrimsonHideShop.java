@@ -39,7 +39,7 @@ public class CrimsonHideShop implements Listener {
 
         ItemMeta bootsMeta = boots.getItemMeta();
 
-        bootsMeta.setLore(Arrays.asList("&7Price:", "&7x4 crimson hide", "&7x1 fighter boots"));
+        bootsMeta.setLore(Chat.colorList(Arrays.asList("&7Price:", "&7x4 crimson hide", "&7x1 fighter boots")));
 
         boots.setItemMeta(bootsMeta);
 
@@ -49,7 +49,7 @@ public class CrimsonHideShop implements Listener {
 
         ItemMeta leggingsMeta = leggings.getItemMeta();
 
-        leggingsMeta.setLore(Arrays.asList("&7Price:", "&7x7 crimson hide", "&7x1 fighter leggings"));
+        leggingsMeta.setLore(Chat.colorList(Arrays.asList("&7Price:", "&7x7 crimson hide", "&7x1 fighter leggings")));
 
         leggings.setItemMeta(leggingsMeta);
 
@@ -59,7 +59,7 @@ public class CrimsonHideShop implements Listener {
 
         ItemMeta chestMeta = chest.getItemMeta();
 
-        chestMeta.setLore(Arrays.asList("&7Price:", "&7x8 crimson hide", "&7x1 fighter chestplate"));
+        chestMeta.setLore(Chat.colorList(Arrays.asList("&7Price:", "&7x8 crimson hide", "&7x1 fighter chestplate")));
 
         chest.setItemMeta(chestMeta);
 
@@ -69,7 +69,7 @@ public class CrimsonHideShop implements Listener {
 
         ItemMeta helmetMeta = helmet.getItemMeta();
 
-        helmetMeta.setLore(Arrays.asList("&7Price:", "&7x5 crimson hide", "&7x1 fighter helmet"));
+        helmetMeta.setLore(Chat.colorList(Arrays.asList("&7Price:", "&7x5 crimson hide", "&7x1 fighter helmet")));
 
         helmet.setItemMeta(helmetMeta);
 

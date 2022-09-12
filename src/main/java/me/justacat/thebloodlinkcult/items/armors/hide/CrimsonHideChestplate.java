@@ -8,6 +8,7 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.HashMap;
@@ -20,9 +21,9 @@ public class CrimsonHideChestplate extends CustomItem {
 
         ItemMeta meta = getItemMeta();
 
-        meta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, new AttributeModifier(UUID.randomUUID().toString(), 3, AttributeModifier.Operation.ADD_NUMBER));
-        meta.addAttributeModifier(Attribute.GENERIC_ARMOR, new AttributeModifier(UUID.randomUUID().toString(), 3, AttributeModifier.Operation.ADD_NUMBER));
-        meta.addAttributeModifier(Attribute.GENERIC_MAX_HEALTH, new AttributeModifier(UUID.randomUUID().toString(), 2, AttributeModifier.Operation.ADD_NUMBER));
+        meta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, new AttributeModifier(UUID.randomUUID(), UUID.randomUUID().toString(), 3, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.CHEST));
+        meta.addAttributeModifier(Attribute.GENERIC_ARMOR, new AttributeModifier(UUID.randomUUID(), UUID.randomUUID().toString(), 3, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.CHEST));
+        meta.addAttributeModifier(Attribute.GENERIC_MAX_HEALTH, new AttributeModifier(UUID.randomUUID(), UUID.randomUUID().toString(), 2, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.CHEST));
 
 
         setItemMeta(meta);

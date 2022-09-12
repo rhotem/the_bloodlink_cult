@@ -56,7 +56,7 @@ public class GhoulEvents implements Listener {
             ItemMeta meta = hide.getItemMeta();
 
             meta.setDisplayName(Chat.colorMessage("&4&kA &4&lCrimson Hide &4&kA"));
-            meta.setLore(Arrays.asList("&0", "&7"));
+            meta.setLore(Chat.colorList(Arrays.asList("&0", "&7Right click to open crafting menu!")));
 
             hide.setItemMeta(meta);
 

@@ -2,6 +2,14 @@ package me.justacat.thebloodlinkcult.items;
 
 import me.justacat.thebloodlinkcult.items.armors.TheBladeBreaker;
 import me.justacat.thebloodlinkcult.items.armors.TheRedShield;
+import me.justacat.thebloodlinkcult.items.armors.fighter.FighterBoots;
+import me.justacat.thebloodlinkcult.items.armors.fighter.FighterChestplate;
+import me.justacat.thebloodlinkcult.items.armors.fighter.FighterHelmet;
+import me.justacat.thebloodlinkcult.items.armors.fighter.FighterLeggings;
+import me.justacat.thebloodlinkcult.items.armors.hide.CrimsonHideBoots;
+import me.justacat.thebloodlinkcult.items.armors.hide.CrimsonHideChestplate;
+import me.justacat.thebloodlinkcult.items.armors.hide.CrimsonHideHelmet;
+import me.justacat.thebloodlinkcult.items.armors.hide.CrimsonHideLeggings;
 import me.justacat.thebloodlinkcult.items.armors.knight.BloodLinkBoots;
 import me.justacat.thebloodlinkcult.items.armors.knight.BloodLinkChestplate;
 import me.justacat.thebloodlinkcult.items.armors.knight.BloodLinkHelmet;
@@ -27,6 +35,14 @@ public enum RegisteredItems {
     PriestChestplate(new PriestChestplate()),
     PriestLeggings(new PriestLeggings()),
     PriestBoots(new PriestBoots()),
+    CrimsonHideBoots(new CrimsonHideBoots()),
+    CrimsonHideLeggings(new CrimsonHideLeggings()),
+    CrimsonHideChestplate(new CrimsonHideChestplate()),
+    CrimsonHideHelmet(new CrimsonHideHelmet()),
+    FighterBoots(new FighterBoots()),
+    FighterLeggings(new FighterLeggings()),
+    FighterChestplate(new FighterChestplate()),
+    FighterHelmet(new FighterHelmet()),
     TheRedShield(new TheRedShield()),
     TheBloodLinkScribes(new TheBloodLinkScribes()),
     TheBladeBreaker(new TheBladeBreaker(true)),

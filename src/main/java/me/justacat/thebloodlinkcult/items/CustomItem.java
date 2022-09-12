@@ -86,7 +86,7 @@ public abstract class CustomItem extends ItemStack {
 
     public abstract List<String> getCustomLore();
 
-    public abstract EquipmentSlot[] getActiveSlots();
+    public EquipmentSlot[] getActiveSlots() {return new EquipmentSlot[0];}
 
     public int getDamage() {return 1;}
 

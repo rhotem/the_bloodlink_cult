@@ -55,36 +55,40 @@ public class TheSacrifice extends CustomItem {
 
         if (activeOn.contains(e.getEntity().getUniqueId())) return;
         activeOn.add(e.getEntity().getUniqueId());
-        damageAttack(1, e);
+
+        if (e.getDamager() instanceof LivingEntity && e.getEntity() instanceof LivingEntity) {
+            damageAttack(1, (LivingEntity) e.getDamager(), (LivingEntity) e.getEntity(), e.getFinalDamage());
+        }
 
 
 
     }
 
-    public void damageAttack(int number, EntityDamageByEntityEvent e) {
+    public void damageAttack(int number, LivingEntity attacker, LivingEntity victim, double damage) {
 
-        if (number > 3) {
-            activeOn.remove(e.getEntity().getUniqueId());
+        if (number > 4) {
+            activeOn.remove(victim.getUniqueId());
             return;
         }
 
-        if (e.getEntity() instanceof LivingEntity entity) {
+        victim.setNoDamageTicks(0);
+        victim.setMaximumNoDamageTicks(0);
 
-            Bukkit.getScheduler().runTaskLater(TheBloodLinkCult.instance, () -> {
-                entity.damage(e.getFinalDamage(), e.getDamager());
 
-                Vector direction = entity.getLocation().toVector().add(e.getDamager().getLocation().toVector().multiply(-1));
+        Bukkit.getScheduler().runTaskLater(TheBloodLinkCult.instance, () -> {
+            victim.damage(damage, attacker);
 
-                entity.setVelocity(entity.getVelocity().add(direction.normalize().multiply(0.3)));
+            Vector direction = victim.getLocation().toVector().add(attacker.getLocation().toVector().multiply(-1));
 
-                entity.getWorld().spawnParticle(Particle.SWEEP_ATTACK, entity.getLocation(), 1);
+            victim.setVelocity(victim.getVelocity().add(direction.normalize().multiply(0.3)));
 
-                damageAttack(number + 1, e);
+            victim.getWorld().spawnParticle(Particle.SWEEP_ATTACK, victim.getLocation(), 1);
 
+            damageAttack(number + 1, attacker, victim, damage);
             }, 5);
 
 
-        }
+
     }
 
     @Override

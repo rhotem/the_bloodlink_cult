@@ -3,6 +3,7 @@ package me.justacat.thebloodlinkcult;
 import me.justacat.thebloodlinkcult.commands.GetItemCommand;
 import me.justacat.thebloodlinkcult.commands.GetItemTabComplete;
 import me.justacat.thebloodlinkcult.commands.SpawnCrimsonGhoul;
+import me.justacat.thebloodlinkcult.gui.CrimsonHideShop;
 import me.justacat.thebloodlinkcult.items.CustomItem;
 import me.justacat.thebloodlinkcult.listeners.ClickEvent;
 import me.justacat.thebloodlinkcult.listeners.GhoulEvents;
@@ -34,6 +35,7 @@ public final class TheBloodLinkCult extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new ClickEvent(), this);
         Bukkit.getPluginManager().registerEvents(new JoinQuitEvent(), this);
         Bukkit.getPluginManager().registerEvents(new GhoulEvents(), this);
+        Bukkit.getPluginManager().registerEvents(new CrimsonHideShop(), this);
 
     }
 

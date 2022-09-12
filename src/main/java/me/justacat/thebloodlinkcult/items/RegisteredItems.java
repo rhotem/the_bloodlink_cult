@@ -50,7 +50,8 @@ public enum RegisteredItems {
     MagicWand(new MagicWand()),
     TheGodKiller(new TheGodKiller()),
     Teleporter(new Teleporter()),
-    TheSacrifice(new TheSacrifice());
+    TheSacrifice(new TheSacrifice()),
+    BoomBow(new BoomBow());
 
     private final CustomItem item;
 

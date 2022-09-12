@@ -8,6 +8,7 @@ import me.justacat.thebloodlinkcult.items.CustomItem;
 import me.justacat.thebloodlinkcult.listeners.ClickEvent;
 import me.justacat.thebloodlinkcult.listeners.GhoulEvents;
 import me.justacat.thebloodlinkcult.listeners.JoinQuitEvent;
+import me.justacat.thebloodlinkcult.listeners.OnMove;
 import org.bukkit.Bukkit;
 import org.bukkit.NamespacedKey;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -36,6 +37,7 @@ public final class TheBloodLinkCult extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new JoinQuitEvent(), this);
         Bukkit.getPluginManager().registerEvents(new GhoulEvents(), this);
         Bukkit.getPluginManager().registerEvents(new CrimsonHideShop(), this);
+        Bukkit.getPluginManager().registerEvents(new OnMove(), this);
 
     }
 

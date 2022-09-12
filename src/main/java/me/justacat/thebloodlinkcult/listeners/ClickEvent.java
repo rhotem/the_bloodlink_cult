@@ -1,20 +1,28 @@
 package me.justacat.thebloodlinkcult.listeners;
 
+import me.justacat.thebloodlinkcult.TheBloodLinkCult;
 import me.justacat.thebloodlinkcult.items.CustomItem;
 import me.justacat.thebloodlinkcult.items.armors.TheBladeBreaker;
 import me.justacat.thebloodlinkcult.items.armors.TheRedShield;
+import me.justacat.thebloodlinkcult.items.others.BoomBow;
+import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.EntityShootBowEvent;
+import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerItemDamageEvent;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.Damageable;
+import org.bukkit.metadata.FixedMetadataValue;
 
+import java.util.UUID;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class ClickEvent implements Listener {
@@ -116,6 +124,32 @@ public class ClickEvent implements Listener {
 
             }
 
+
+        }
+
+    }
+
+    @EventHandler
+    public void onShoot(EntityShootBowEvent e) {
+
+        CustomItem item = CustomItem.getCustomItem(e.getBow());
+
+        if (!(item instanceof BoomBow)) return;
+
+        e.getProjectile().setGlowing(true);
+        e.getProjectile().setMetadata("boom", new FixedMetadataValue(TheBloodLinkCult.instance, e.getEntity().getUniqueId().toString()));
+
+
+    }
+
+    @EventHandler
+    public void onArrowHit(ProjectileHitEvent e) {
+
+        if (e.getEntity().hasMetadata("boom")) {
+
+            Location location = e.getEntity().getLocation();
+
+            location.getWorld().createExplosion(location, 5, true, true, Bukkit.getEntity(UUID.fromString(e.getEntity().getMetadata("boom").get(0).asString())));
 
         }
 

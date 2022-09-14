@@ -8,3 +8,4 @@ commands:
     usage: "/GetItem <ID>"
   SpawnCrimsonGhoul:
     permission: op
+depend: [WorldEdit]

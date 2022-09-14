@@ -1,14 +1,17 @@
 package me.justacat.thebloodlinkcult.items.others;
 
 import me.justacat.thebloodlinkcult.items.CustomItem;
-import me.justacat.thebloodlinkcult.world.CustomChunkGenerator;
-import org.bukkit.*;
+import org.bukkit.Bukkit;
+import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.EquipmentSlot;
 
 import java.util.List;
+
+import static me.justacat.thebloodlinkcult.TheBloodLinkCult.customWorld;
 
 public class Teleporter extends CustomItem {
 
@@ -21,21 +24,17 @@ public class Teleporter extends CustomItem {
 
         Player player = e.getPlayer();
 
-        WorldCreator worldCreator = new WorldCreator("CultistWorld");
-        World world = worldCreator.generateStructures(false).generator(new CustomChunkGenerator()).createWorld();
-
-        world.setGameRule(GameRule.DO_DAYLIGHT_CYCLE, false);
 
         Location location = player.getLocation();
 
-        if (player.getWorld().equals(world)) {
+        if (player.getWorld().equals(customWorld)) {
 
             location.setWorld(Bukkit.getWorlds().get(0));
 
 
 
         } else {
-            location.setWorld(world);
+            location.setWorld(customWorld);
 
         }
 

@@ -37,16 +37,26 @@ public class CustomChunkGenerator extends ChunkGenerator {
                 for (int z = 0; z < 16; z++) {
                     float noise2 = (terrainNoise.GetNoise(x + (chunkX * 16), z + (chunkZ * 16)) * 2) + (detailNoise.GetNoise(x + (chunkX * 16), z + (chunkZ * 16)) / 50);
 
-                    if (Math.random() < 0.002) {
 
-                        chunkData.setBlock(x, y, z, Material.BARRIER);
-
-                    }
 
                     if (65 + (40 * noise2) > y) {
-                        chunkData.setBlock(x, y, z, Material.RED_SANDSTONE);
+                        if (Math.random() < 0.001) {
+
+                            chunkData.setBlock(x, y, z, Material.BARRIER);
+
+                        } else {
+                            chunkData.setBlock(x, y, z, Material.RED_SANDSTONE);
+                        }
+
                     } else if (y < terrainNoise.GetNoise(x + (chunkX * 16), z + (chunkZ * 16)) * 60) {
-                        chunkData.setBlock(x, y, z, Material.RED_SANDSTONE);
+                        if (Math.random() < 0.001) {
+
+                            chunkData.setBlock(x, y, z, Material.BARRIER);
+
+                        } else {
+                            chunkData.setBlock(x, y, z, Material.RED_SANDSTONE);
+                        }
+
                     } else {
                         chunkData.setBlock(x, y, z, Material.AIR);
                     }

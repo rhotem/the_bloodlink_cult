@@ -9,8 +9,8 @@ import me.justacat.thebloodlinkcult.listeners.ClickEvent;
 import me.justacat.thebloodlinkcult.listeners.GhoulEvents;
 import me.justacat.thebloodlinkcult.listeners.JoinQuitEvent;
 import me.justacat.thebloodlinkcult.listeners.OnMove;
-import org.bukkit.Bukkit;
-import org.bukkit.NamespacedKey;
+import me.justacat.thebloodlinkcult.world.CustomChunkGenerator;
+import org.bukkit.*;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class TheBloodLinkCult extends JavaPlugin {
@@ -18,6 +18,8 @@ public final class TheBloodLinkCult extends JavaPlugin {
     public static TheBloodLinkCult instance;
 
     public static NamespacedKey drainKey;
+
+    public static World customWorld;
 
     @Override
     public void onEnable() {
@@ -38,6 +40,14 @@ public final class TheBloodLinkCult extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new GhoulEvents(), this);
         Bukkit.getPluginManager().registerEvents(new CrimsonHideShop(), this);
         Bukkit.getPluginManager().registerEvents(new OnMove(), this);
+
+        if (!getDataFolder().exists()) getDataFolder().mkdirs();
+
+        WorldCreator worldCreator = new WorldCreator("CultistWorld");
+        customWorld = worldCreator.generateStructures(false).generator(new CustomChunkGenerator()).createWorld();
+        customWorld.setGameRule(GameRule.DO_DAYLIGHT_CYCLE, false);
+
+
 
     }
 
